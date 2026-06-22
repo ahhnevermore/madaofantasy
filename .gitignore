@@ -9,6 +9,7 @@ public/
 .env
 .env.local
 .env.*.local
+.env.test
 
 # IDE
 .vscode/
