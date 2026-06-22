@@ -1,73 +1,18 @@
-# React + TypeScript + Vite
+Soon to be a super website for all of my schemes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Starting with the first real Hay Day trading marketplace with buy and sell orders and whatnot
 
-Currently, two official plugins are available:
+How to run it yourself
+Developed on WSL, so I'd recommend that, or obviously, a real Linux distro
+npm install I guess
+you need postgres running - systemd simplifies matters
+you'll have to create two databases (well,2 if you want to test. otherwise 1 for your dev). Put the connection string in your env file, as per the env.test
+run npx prisma generate
+run npx prisma db push (you'll have to ensure each database connection string is in the environment)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+have fun spamming commands now :D
 
-## React Compiler
+I'll update how I'm gonna do logging and https and stuff in the future
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Note: This project definitely used AI for generating some templates, explaining a lot of code, and review.
+I wouldn't say I'm top of the pops with all these libraries. I initially tried to vibe code this project, but was forced to rip out most of it because I can't spend whatever that Bun guy seems to have spent. I've still copied functions especially for the react stuff while rewriting it.
